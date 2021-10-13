@@ -16,12 +16,8 @@ Assume that the square directly North from (x, y) is (x, y+1).
 
 ## Built With
 
-- HTML5
-- CSS3
-- Bootstrap
-- Font Awesome
-- JavaScript-
-- Jest Test
+- Ruby
+- Rspec Test
 
 ## Our Project
 
@@ -37,18 +33,18 @@ A Morden Browser
 - Go to [Mars Rover tech Challange](https://github.com/tnyandoro/marsrovertechchallenge/)
 - Clone the project to your local machine
 - Cd into your directory
-- Run npm install
+- Run yarn install
   
   ### run tests
 - yarn test/npm run test
   
   ### run live demo on the terminal
-- cd into src/utils/
-- run node rover.js
-- 
+- cd into Mars_rover_tech_challenge
+- bundle install
+- run ruby rover.rb 
 
 ### Setup
-- To Test npm install jest and run npm test
+- To Test run rspec
 ## Authors
 
 👤 **Tendai Nyandoro**
