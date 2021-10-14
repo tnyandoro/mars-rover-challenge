@@ -1,10 +1,10 @@
 class Plateau::Grid
-  attr_accessor :grid, :x_max, :y_max 
+  attr_accessor :grid, :x_max, :y_max
 
   def initialize(x_max, y_max)
     @x_max = x_max
     @y_max = y_max
-    @grid = Array.new(x_max) { Array.new(y_max) { '.' } }  
+    @grid = Array.new(x_max) { Array.new(y_max) { '.' } }
   end
 
   def add_rover(rover)
@@ -23,7 +23,7 @@ class Plateau::Grid
     @grid[rover.x][rover.y] = '.'
   end
 
-  def print_grid 
+  def print_grid
     @grid.each do |row|
       puts row.join(' ')
     end

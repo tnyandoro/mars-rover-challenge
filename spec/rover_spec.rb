@@ -4,21 +4,21 @@ describe 'Rover' do
   let(:rover) { Rover.new('1 1 N') }
 
   describe '#move' do
-      it 'should move the rover forward' do
-          rover.move()
-          expect(rover.y_coordinate).to eq(2)
-      end
+    it 'should move the rover forward' do
+      rover.move
+      expect(rover.y_coordinate).to eq(2)
+    end
 
-      it 'should move the rover left' do
-          rover.command('LMLMLMLMM')
-          expect(rover.x_coordinate).to eq(1)
-      end
+    it 'should move the rover left' do
+      rover.command('LMLMLMLMM')
+      expect(rover.x_coordinate).to eq(1)
+    end
 
-      it 'should move the rover right' do
-          rover.command('MMRMMRMRRM')
-          expect(rover.y_coordinate).to eq(3)
-          expect(rover.x_coordinate).to eq(3)
-      end
+    it 'should move the rover right' do
+      rover.command('MMRMMRMRRM')
+      expect(rover.y_coordinate).to eq(3)
+      expect(rover.x_coordinate).to eq(3)
+    end
   end
 
   describe '#command' do

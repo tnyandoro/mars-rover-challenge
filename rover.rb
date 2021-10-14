@@ -2,7 +2,7 @@ class Rover
   attr_accessor :x_coordinate, :y_coordinate, :direction
 
   def initialize(position)
-    position = position.split(' ');
+    position = position.split
     @x_coordinate = position[0].to_i
     @y_coordinate = position[1].to_i
     @direction = position[2]
@@ -18,7 +18,7 @@ class Rover
       when 'M'
         move
       else
-        puts "Invalid instruction"
+        puts 'Invalid instruction'
       end
     end
   end
@@ -87,4 +87,3 @@ end
 # puts rover2.x_coordinate
 # puts rover2.y_coordinate
 # puts rover2.direction
-
