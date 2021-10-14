@@ -3,8 +3,8 @@ class Rover
 
   def initialize(position)
     position = position.split(' ');
-    @x_coordinate = position[0]
-    @y_coordinate = position[1]
+    @x_coordinate = position[0].to_i
+    @y_coordinate = position[1].to_i
     @direction = position[2]
   end
 
@@ -17,6 +17,8 @@ class Rover
         turn_right
       when 'M'
         move
+      else
+        puts "Invalid instruction"
       end
     end
   end
@@ -24,13 +26,13 @@ class Rover
   def move
     case @direction
     when 'N'
-      @y_coordinate = @yCoordinate.to_i + 1
+      @y_coordinate += 1
     when 'S'
-      @y_coordinate = @yCoordinate.to_i - 1
+      @y_coordinate -= 1
     when 'E'
-      @x_coordinate = @xCoordinate.to_i + 1
+      @x_coordinate += 1
     when 'W'
-      @x_coordinate = @xCoordinate.to_i - 1
+      @x_coordinate -= 1
     end
   end
 
@@ -61,25 +63,28 @@ class Rover
   end
 end
 
-rover = Rover.new('1 2 N')
-puts '************INITIALMOVES************'
-puts rover.x_coordinate
-puts rover.y_coordinate
-puts rover.direction
-puts '************VALUES AFTER MOVE LEFT************'
-rover.command('LMLMLMLMM')
-puts rover.x_coordinate
-puts rover.y_coordinate
-puts rover.direction
+# d
 
-rover2 = Rover.new('3 3 E')
-puts '>>>>>>>>>>>>************INITIALMOVES************<<<<<<<<<<<<<<'
-puts rover2.x_coordinate
-puts rover2.y_coordinate
-puts rover2.direction
+# rover = Rover.new('1 2 N')
+# puts '************INITIALMOVES************'
+# puts rover.x_coordinate
+# puts rover.y_coordinate
+# puts rover.direction
+# puts '************VALUES AFTER MOVE LEFT************'
+# rover.command('LMLMLMLMM')
+# puts rover.x_coordinate
+# puts rover.y_coordinate
+# puts rover.direction
 
-puts '*************VAUES AFTER MOVE RIGHT***********'
-rover2.command('MMRMMRMRRM')
-puts rover2.x_coordinate
-puts rover2.y_coordinate
-puts rover2.direction
+# rover2 = Rover.new('3 3 E')
+# puts '>>>>>>>>>>>>************INITIALMOVES************<<<<<<<<<<<<<<'
+# puts rover2.x_coordinate
+# puts rover2.y_coordinate
+# puts rover2.direction
+
+# puts '*************VAUES AFTER MOVE RIGHT***********'
+# rover2.command('MMRMMRMRRM')
+# puts rover2.x_coordinate
+# puts rover2.y_coordinate
+# puts rover2.direction
+

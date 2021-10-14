@@ -1,26 +1,45 @@
-# spec/rover_spec.rb
+require_relative '../rover'
 
-describe Rover do
-  before :each do
-      @rover = Rover.new(0, 1, 1, 'N')
-  end
+describe 'Rover' do
+  let(:rover) { Rover.new('1 1 N') }
 
   describe '#move' do
       it 'should move the rover forward' do
-          rover.move('M')
-          expect(rover.x).to eq(1)
-          expect(rover.y).to eq(2)
+          rover.move()
+          expect(rover.y_coordinate).to eq(2)
       end
 
       it 'should move the rover left' do
-          rover.move('L')
-          expect(rover.x).to eq(0)
-          expect(rover.y).to eq(1)
+          rover.command('LMLMLMLMM')
+          expect(rover.x_coordinate).to eq(1)
       end
 
       it 'should move the rover right' do
-          rover.move('R')
-          expect(rover.x).to eq(1)
-          expect(rover.y).to eq(1)
+          rover.command('MMRMMRMRRM')
+          expect(rover.y_coordinate).to eq(3)
+          expect(rover.x_coordinate).to eq(3)
       end
   end
+
+  describe '#command' do
+    it 'follows provided instructions' do
+      rover.command('LLL')
+      expect(rover.x_coordinate).to eq(1)
+      expect(rover.direction).to eq('E')
+    end
+  end
+
+  describe '#turn_left' do
+    it 'changes direction 90 deg anti-clockwise' do
+      rover.turn_left
+      expect(rover.direction).to eq('W')
+    end
+  end
+
+  describe '#turn_right' do
+    it 'changes direction 90 deg clockwise' do
+      rover.turn_right
+      expect(rover.direction).to eq('E')
+    end
+  end
+end

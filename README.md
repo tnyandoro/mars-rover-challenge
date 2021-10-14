@@ -42,9 +42,8 @@ A Morden Browser
 - cd into Mars_rover_tech_challenge
 - bundle install
 - run ruby rover.rb 
+- run rspec
 
-### Setup
-- To Test run rspec
 ## Authors
 
 👤 **Tendai Nyandoro**
